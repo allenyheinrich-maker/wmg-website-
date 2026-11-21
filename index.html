@@ -1,253 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>White Mothers Group (WMG) | Empowering Women in Ruvuma</title>
-  <meta name="description" content="White Mothers Group (WMG) is a community-rooted organization in Songea, Ruvuma, dedicated to restoring dignity and economic independence to vulnerable young women." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White Mother | Empowering Young Women in Songea</title>
+  <meta name="description" content="White Mother is a community-based organization in Songea, Tanzania (CBO3456548), providing vocational skills and second chances to vulnerable young women and school dropouts.">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
     :root {
-      --primary: #0f766e; 
-      --primary-dark: #115e59;
+      --primary: #0b6e4f;
+      --primary-dark: #08543c;
+      --primary-light: #e6f4ef;
+      --text: #1f2933;
+      --muted: #52606d;
       --bg: #f8fafc;
-      --text: #1e293b;
-      --muted: #475569;
-      --card: #ffffff;
-      --border: #e2e8f0;
+      --white: #ffffff;
+      --border: #d9e2ec;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
     html { scroll-behavior: smooth; }
+    
     body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
     }
-    a { color: var(--primary); text-decoration: none; }
-    
+
+    /* HEADER & NAV */
     header {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 20px; max-width: 1100px; margin: 0 auto;
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      gap: 1rem;
     }
-    .logo { font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 10px; font-size: 1.3rem; }
-    .nav-links { display: flex; gap: 24px; list-style: none; }
-    .nav-links a { color: var(--muted); font-weight: 500; font-size: 0.95rem; }
-    .nav-links a:hover { color: var(--primary); }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    section { padding: 80px 0; }
-    .section-title { font-size: 2rem; margin-bottom: 40px; text-align: center; color: var(--primary-dark); }
+    .logo { font-weight: 700; font-size: 1.4rem; color: var(--primary); text-decoration: none; }
+    .logo span { font-weight: 400; font-size: 0.85rem; display: block; color: var(--muted); }
     
-    .hero { background: var(--primary-dark); color: white; padding: 100px 0; text-align: center; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; line-height: 1.2; }
-    .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+    nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    nav a:hover { background: var(--primary-light); color: var(--primary); }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--white);
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
     .btn {
-      display: inline-block; padding: 14px 32px; border-radius: 6px;
-      background: white; color: var(--primary-dark); font-weight: 700;
-      transition: transform 0.2s; text-align: center;
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      background: var(--white);
+      color: var(--primary-dark);
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn:hover { transform: translateY(-2px); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .card {
-      background: var(--card); border-radius: 8px; padding: 30px;
-      border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-    }
-    .card h3 { margin-bottom: 12px; color: var(--primary-dark); }
-
-    .about-content { max-width: 900px; margin: 0 auto; }
-    .about-text { font-size: 1.1rem; color: var(--muted); margin-bottom: 20px; text-align: center; }
+    /* MAIN CONTENT */
+    main { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
+    section { margin-bottom: 4rem; scroll-margin-top: 90px; }
     
-    .stat-box {
-      background: #f0fdfa; border-left: 6px solid var(--primary);
-      padding: 30px; border-radius: 8px; margin: 40px 0; text-align: center;
+    h2 { 
+      font-size: 1.8rem; 
+      margin-bottom: 1.5rem; 
+      color: var(--primary-dark); 
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.5rem;
+      display: inline-block;
     }
-    .stat-box h3 { color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 10px; }
-    .stat-box p { color: var(--muted); font-size: 1.05rem; }
+    h3 { font-size: 1.2rem; margin: 1.5rem 0 0.8rem; color: var(--text); }
+    p { margin-bottom: 1rem; color: var(--muted); }
+    
+    ul { margin: 0 0 1rem 1.5rem; color: var(--muted); }
+    li { margin-bottom: 0.5rem; }
 
-    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-    @media (max-width: 768px) { .mission-grid { grid-template-columns: 1fr; } }
-    .mission-grid h3 { color: var(--primary-dark); margin-bottom: 10px; font-size: 1.3rem; }
-    .mission-grid p { color: var(--muted); }
-
-    .programs-list { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 30px; }
-    .tag {
-      background: #e0f2fe; color: #0369a1; padding: 8px 16px; border-radius: 20px;
-      font-weight: 600; font-size: 0.9rem;
+    /* CARDS & GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
-
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .gallery-item {
-      width: 100%; height: 250px; object-fit: cover; 
-      border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    .card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
     }
+    .card:hover { transform: translateY(-4px); }
+    .card h3 { margin-top: 0; color: var(--primary); font-size: 1.1rem; }
+    
+    /* IMAGE GALLERY */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; box-shadow: var(--shadow); }
 
-    .faq-box { background: white; padding: 40px; border-radius: 8px; border-left: 6px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-    .faq-box h3 { margin-bottom: 15px; font-size: 1.4rem; color: var(--primary-dark); }
-    .faq-box p { color: var(--muted); margin-bottom: 15px; }
+    /* NOTE & CONTACT BOXES */
+    .note {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .note strong { color: var(--primary-dark); }
+    
+    .contact-box {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+    }
+    .contact-box p { margin: 0.5rem 0; color: var(--text); }
+    .contact-box strong { color: var(--primary-dark); }
 
-    footer { background: var(--text); color: white; padding: 40px 0; text-align: center; }
-    footer p { color: #cbd5e1; font-size: 0.9rem; }
+    /* TABLES (GOVERNANCE) */
+    .table-container { overflow-x: auto; margin-top: 1rem; }
+    .role-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+    .role-table th, .role-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .role-table th { background: var(--primary); color: var(--white); font-weight: 600; }
+    .role-table tr:last-child td { border-bottom: none; }
+    .role-table tr:nth-child(even) { background: var(--bg); }
+
+    /* FOOTER */
+    footer {
+      background: #102a43;
+      color: #d9e2ec;
+      padding: 3rem 1.5rem;
+      font-size: 0.95rem;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    footer p { color: #9fb3c8; margin-bottom: 0.5rem; }
+    footer strong { color: var(--white); }
+    footer a { color: #9fb3c8; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--white); }
+    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .header-inner { flex-direction: column; text-align: center; }
+      nav ul { justify-content: center; }
+      h2 { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="#" class="logo">
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10" fill="#e0f2fe"></circle>
-          <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9z"></path>
-          <path d="M16 14v-.5a4 4 0 0 0-8 0v.5"></path>
-          <circle cx="12" cy="7" r="3"></circle>
-        </svg>
-        White Mothers Group
-      </a>
-      <ul class="nav-links">
-        <li><a href="#about">About Us</a></li>
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      White Mother
+      <span>Registered CBO No. CBO3456548 · Songea, Tanzania</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
         <li><a href="#programs">Programs</a></li>
+        <li><a href="#beekeeping">Beekeeping</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#impact">Accomplishments</a></li>
+        <li><a href="#governance">Governance</a></li>
+        <li><a href="#safeguarding">Safeguarding</a></li>
+        <li><a href="#donate">Donate</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Restoring Dignity & Economic Independence</h1>
-        <p>White Mothers Group (WMG) is a community-rooted organization empowering vulnerable young women and school dropouts in Songea, Ruvuma region.</p>
-        <a href="#contact" class="btn">Contact Henrick Komba</a>
-      </div>
-    </section>
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Empowering Young Women in Songea</h1>
+    <p>Providing practical vocational skills and second chances to vulnerable young women and school dropouts (aged 12+) so they can build dignified, independent futures.</p>
+    <a href="#contact" class="btn">Contact Us</a>
+  </div>
+</section>
 
-    <section id="about">
-      <div class="container about-content">
-        <h2 class="section-title">Who We Are</h2>
-        <p class="about-text">
-          Established in 2015 in Songea, Ruvuma region, the <strong>White Mothers Group (WMG)</strong> is a community-rooted organization dedicated to restoring dignity and economic independence to vulnerable young women and school dropouts (aged 12+). We provide practical, life-changing skills to help our community thrive.
-        </p>
-        <p class="about-text">
-          WMG currently runs established vocational training programs in tailoring, carpentry, welding, computer literacy, plumbing, and mechanics, alongside existing small-scale beekeeping activities.
-        </p>
+<main>
 
-        <div class="stat-box">
-          <h3>Why We Do It</h3>
-          <p>Early pregnancy is one of the biggest reasons girls leave school in Tanzania. According to the national audit office, <strong>42,954 girls dropped out in a single year</strong>. Ruvuma has the second-highest rate of teenage childbearing in Tanzania at <strong>37%</strong>. Without a pathway back to education and income, these young women face long-term exclusion and dependency. WMG provides that second chance.</p>
-        </div>
-
-        <div class="mission-grid">
-          <div>
-            <h3>Our Mission</h3>
-            <p>To give 100 young women in Songea a real second chance at economic independence. We do this by providing practical vocational skills, establishing community-run enterprises, and empowering young mothers with the tools to support themselves and their families.</p>
-          </div>
-          <div>
-            <h3>Our Future: The Beekeeping Enterprise</h3>
-            <p>Demand has outgrown our centre's equipment. To secure a reliable income, WMG is establishing a community-run beekeeping enterprise of <strong>150 Langstroth hives</strong>. Supported by NEST Projects Foundation and Tunza Nyuki, this project will generate an estimated 45 to 60 million TZS in annual honey sales, funding the training centre and providing income for the women.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="programs" style="background: white;">
-      <div class="container">
-        <h2 class="section-title">Our Vocational Programs</h2>
-        <p class="about-text" style="text-align: center;">WMG currently runs established vocational training programs designed to equip young people with marketable skills.</p>
-        
-        <div class="programs-list">
-          <span class="tag">Tailoring</span>
-          <span class="tag">Carpentry</span>
-          <span class="tag">Welding</span>
-          <span class="tag">Computer Literacy</span>
-          <span class="tag">Plumbing</span>
-          <span class="tag">Mechanics</span>
-          <span class="tag">Beekeeping</span>
-          <span class="tag">Electrical Installation</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="container">
-        <h2 class="section-title">Our Work in Action</h2>
-        <div class="gallery">
-          <img src="https://i.postimg.cc/c6df35Ms/Electrician.png" alt="WMG Electrical Training" class="gallery-item">
-          <img src="https://i.postimg.cc/Yj8Yzfb4/Electrician-(1).png" alt="WMG Electrical Workshop" class="gallery-item">
-          <img src="https://i.postimg.cc/1ft6CnjJ/Mechanics.png" alt="WMG Mechanics Training" class="gallery-item">
-          <img src="https://i.postimg.cc/Njgx2LpT/Tailoring-(1).png" alt="WMG Tailoring Training" class="gallery-item">
-          <img src="https://i.postimg.cc/9rn9vX3F/Tailoring-(1).png" alt="WMG Tailoring Class" class="gallery-item">
-          <img src="https://i.postimg.cc/nXY6DdDB/file-00000000311082118b60d3f80bf3b013.png" alt="WMG Project Photo" class="gallery-item">
-          <img src="https://i.postimg.cc/qNX93m3t/file-00000000348081faa073bd1a8b538005.png" alt="WMG Project Photo" class="gallery-item">
-          <img src="https://i.postimg.cc/dDgPPZFT/file-00000000a42881fa833bb67da0572627.png" alt="WMG Project Photo" class="gallery-item">
-        </div>
-      </div>
-    </section>
-
-    <section id="impact" style="background: white;">
-      <div class="container">
-        <h2 class="section-title">Accomplishments & Future Plans</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Our Accomplishments</h3>
-            <p>Since 2015, we have successfully supported vulnerable young women through our vocational training centre. Our new community-run beekeeping enterprise, supported by NEST Projects Foundation, will establish <strong>150 Langstroth hives</strong>, training <strong>100 young women</strong> and generating an estimated <strong>45 to 60 million TZS</strong> in annual honey sales.</p>
-          </div>
-          
-          <div class="card">
-            <h3>Plans for Success</h3>
-            <p>To ensure the success of this venture, WMG plans to: <br><br>
-            1. Train 100 participants in technical beekeeping and financial literacy.<br>
-            2. Develop products like raw honey, beeswax candles, and natural balms.<br>
-            3. Establish internal Savings & Loan Groups to foster long-term financial independence.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="training">
-      <div class="container">
-        <h2 class="section-title">How Training is Delivered</h2>
-        <div class="faq-box">
-          <h3>Will WMG deliver the trade and business training?</h3>
-          <p><strong>Answer:</strong> Yes, WMG will take the lead in delivering the core training. Because we have been established since 2015, we have our own in-house trainers and workshop facilities in Songea. </p>
-          <p>For the technical beekeeping and product development training, WMG will work <strong>in tandem with Tunza Nyuki</strong>, our specialized technical partner who provides expert facilitators, mentors, and market connections. Overall project funding and oversight are provided by <strong>NEST Projects Foundation</strong>.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" style="background: white;">
-      <div class="container" style="text-align: center;">
-        <h2 class="section-title">Get in Touch</h2>
-        <p style="color: var(--muted); margin-bottom: 20px; font-size: 1.1rem;">
-          Interested in partnering with WMG or supporting our mission?<br>
-          Please reach out to <strong>Henrick Komba, Project Coordinator</strong>.
-        </p>
-        
-        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-          <a href="tel:+255787609024" class="btn" style="background: var(--primary); color: white;">
-            Call/WhatsApp: +255 787 609 024
-          </a>
-          <a href="mailto:allenyheinrich@gmail.com" class="btn" style="background: var(--text); color: white;">
-            Email Henrick
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 White Mothers Group (WMG). Songea, Ruvuma, Tanzania. All rights reserved.</p>
-      <p style="margin-top: 10px;">
-        Project Coordinator: Henrick Komba | Phone/WhatsApp: +255 787 609 024 | Email: allenyheinrich@gmail.com
-      </p>
+  <!-- ABOUT / LEGAL -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p><strong>White Mother</strong> is a community-based organization registered in Tanzania. We provide practical vocational skills and second chances to vulnerable young women and school dropouts (aged 12+) so they can build dignified, independent futures.</p>
+    
+    <div class="note">
+      <strong>Legal & registration details</strong><br>
+      Registered name: White Mother<br>
+      Registration number: CBO3456548<br>
+      Date founded: 2015<br>
+      Registered address: [Street, Ward, Songea, Ruvuma, Tanzania]<br>
+      Office hours: Monday–Friday, 7:00 AM – 4:30 PM<br>
+      Chairman: Frank Mtweve<br>
+      Project Coordinator: Henrick Komba
     </div>
-  </footer>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>To give 100 young women in Songea a real second chance at economic independence through practical skills and community-run enterprises.</p>
+      </div>
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>A community where every young woman has the skills, confidence, and opportunity to support herself and contribute to society.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section id="programs">
+    <h2>Our Programs</h2>
+    <p>We offer hands-on vocational training in trades that lead to real income. Contact us for eligibility, age, duration, intake dates, curriculum, and outcomes.</p>
+    <div class="grid">
+      <div class="card"><h3>Tailoring</h3><p>Garment making, repairs, and small-business skills.</p></div>
+      <div class="card"><h3>Carpentry</h3><p>Furniture making, joinery, and safe tool use.</p></div>
+      <div class="card"><h3>Welding</h3><p>Metalwork, fabrication, and workshop safety.</p></div>
+      <div class="card"><h3>Computer Literacy</h3><p>Basic computing, typing, internet, and office software.</p></div>
+      <div class="card"><h3>Plumbing</h3><p>Pipe fitting, repairs, and installation basics.</p></div>
+      <div class="card"><h3>Mechanics</h3><p>Small-engine and vehicle maintenance basics.</p></div>
+      <div class="card"><h3>Beekeeping</h3><p>Hive management, honey harvesting, and marketing.</p></div>
+      <div class="card"><h3>Electrical Installation</h3><p>Wiring, safety, and basic electrical repairs.</p></div>
+    </div>
+  </section>
+
+  <!-- GALLERY (Nimeongeza hii) -->
+  <section id="gallery">
+    <h2>Our Work in Action</h2>
+    <div class="gallery">
+      <img src="https://i.postimg.cc/c6df35Ms/Electrician.png" alt="WMG Electrical Training">
+      <img src="https://i.postimg.cc/Yj8Yzfb4/Electrician-(1).png" alt="WMG Electrical Workshop">
+      <img src="https://i.postimg.cc/1ft6CnjJ/Mechanics.png" alt="WMG Mechanics Training">
+      <img src="https://i.postimg.cc/Njgx2LpT/Tailoring-(1).png" alt="WMG Tailoring Training">
+      <img src="https://i.postimg.cc/9rn9vX3F/Tailoring-(1).png" alt="WMG Tailoring Class">
+      <img src="https://i.postimg.cc/nXY6DdDB/file-00000000311082118b60d3f80bf3b013.png" alt="WMG Project">
+    </div>
+  </section>
+
+  <!-- BEEKEEPING -->
+  <section id="beekeeping">
+    <h2>Beekeeping Enterprise</h2>
+    <p>We are establishing a community-run beekeeping enterprise with <strong>150 Langstroth hives</strong>. The project aims to generate income for the training center and for young women in our programs.</p>
+    <ul>
+      <li>Expected annual honey sales: <strong>45–60 million TZS</strong></li>
+      <li>Supported by: [NEST Projects Foundation, Tunza Nyuki, etc.]</li>
+      <li>Progress updates: [date, milestones, photos]</li>
+    </ul>
+    <div class="note">
+      This enterprise helps White Mother become more sustainable while creating direct income for women in our programs.
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section id="impact">
+    <h2>Impact & Annual Report</h2>
+    <ul>
+      <li>Young women trained: [number]</li>
+      <li>Completion rate: [%]</li>
+      <li>Graduates in income-generating work: [number/%]</li>
+      <li>Follow-up period: [e.g., 6 months]</li>
+      <li>Beekeeping hives installed: [number]</li>
+    </ul>
+    <p><strong>Download our Annual Report [PDF link]</strong> for a financial summary, activities, and results.</p>
+  </section>
+
+  <!-- GOVERNANCE & ROLES -->
+  <section id="governance">
+    <h2>Governance & Roles</h2>
+    <p>White Mother is governed by a board and managed by a leadership team. Clear roles help us remain accountable to our beneficiaries, donors, and partners.</p>
+
+    <div class="table-container">
+      <table class="role-table">
+        <thead>
+          <tr><th>Name</th><th>Role</th><th>Key Responsibilities</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Frank Mtweve</strong></td>
+            <td>Chairman</td>
+            <td>Overall controller and overseer of all organizational operations. Provides final approval on budgets, programs, partnerships, and major decisions. Represents the organization at the highest level. Ensures the board fulfills its duties and that the organization stays true to its mission.</td>
+          </tr>
+          <tr>
+            <td><strong>Henrick Komba</strong></td>
+            <td>Project Coordinator</td>
+            <td>Connects with donors and partners, maintains donor relationships, and prepares funding proposals and reports. Provides advice and recommendations to the Chairman. Updates and maintains organizational documents, records, and project reports. Coordinates day-to-day project activities and ensures timely reporting.</td>
+          </tr>
+          <tr>
+            <td>[Name]</td>
+            <td>[Board Member]</td>
+            <td>[e.g., Oversees finances / legal compliance / community relations]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <strong>Good practice note:</strong> For strong governance, the Chairman (overall overseer) and the Project Coordinator (donor liaison and document manager) should work closely together while maintaining clear separation of duties. Financial approvals, donor receipts, and project reports should be reviewed by at least two people. This protects the organization, builds donor trust, and prevents errors or misuse.
+    </div>
+    <p>Board meetings occur quarterly to review progress, finances, and safeguarding. Minutes are kept and shared with relevant partners on request.</p>
+  </section>
+
+  <!-- SAFEGUARDING -->
+  <section id="safeguarding">
+    <h2>Safeguarding & Child Protection</h2>
+    <p>White Mother works with young women and school dropouts, including minors. We are committed to protecting every person who comes into contact with our organization.</p>
+    <ul>
+      <li>We do not tolerate any form of abuse, exploitation, harassment, or discrimination.</li>
+      <li>All staff and volunteers must sign and follow our Safeguarding and Child Protection Policy.</li>
+      <li>We obtain informed consent before using any photos or stories of beneficiaries.</li>
+      <li>We have a named Safeguarding Focal Person: [Name, phone, email].</li>
+      <li>Anyone can report a concern confidentially. Reports will be taken seriously and handled promptly.</li>
+    </ul>
+    
+    <h3>How to report a concern</h3>
+    <p>Contact our Safeguarding Focal Person at <strong>[phone]</strong> or email <strong>motherwhite@yahoo.com</strong>. You may also use our confidential complaints form [link]. You may report anonymously.</p>
+
+    <h3>Privacy Policy</h3>
+    <p>We collect only the information needed to provide services, communicate with you, and report to partners. We do not sell personal data. We store data securely and share it only with consent or as required by law. To request access, correction, or deletion of your data, contact <strong>motherwhite@yahoo.com</strong>.</p>
+  </section>
+
+  <!-- DONATE -->
+  <section id="donate">
+    <h2>Donate & Get Involved</h2>
+    <p>All donations are received through official channels in the name of White Mother:</p>
+    <ul>
+      <li><strong>Bank:</strong> [Bank name]</li>
+      <li><strong>Account name:</strong> White Mother</li>
+      <li><strong>Account number:</strong> [XXXX]</li>
+      <li><strong>Mobile money:</strong> [Official number registered to White Mother]</li>
+      <li><strong>Donations in kind:</strong> Contact Henrick Komba (Project Coordinator) at 0762 391 050 to arrange.</li>
+    </ul>
+    
+    <h3>Other ways to help</h3>
+    <ul>
+      <li><strong>Volunteer / Mentor / Trainer:</strong> Apply here [form link].</li>
+      <li><strong>Partner with us:</strong> Contact Henrick Komba, Project Coordinator, at motherwhite@yahoo.com.</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+      <p><strong>Address:</strong> [Street, Ward, Songea, Ruvuma, Tanzania]</p>
+      <p><strong>Email:</strong> motherwhite@yahoo.com</p>
+      <p><strong>Phone/WhatsApp:</strong> 0762 391 050</p>
+      <p><strong>Office hours:</strong> Monday–Friday, 7:00 AM – 4:30 PM</p>
+      <p><strong>Chairman:</strong> Frank Mtweve</p>
+      <p><strong>Project Coordinator:</strong> Henrick Komba</p>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.9rem;">For donor and partnership inquiries, please contact Henrick Komba. For governance and overall organizational matters, contact Frank Mtweve.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p><strong>White Mother</strong></p>
+      <p>Registered CBO No. CBO3456548</p>
+      <p>Songea, Ruvuma, Tanzania</p>
+    </div>
+    <div>
+      <p><strong>Leadership</strong></p>
+      <p>Chairman: Frank Mtweve</p>
+      <p>Project Coordinator: Henrick Komba</p>
+    </div>
+    <div>
+      <p><strong>Contact</strong></p>
+      <p>Email: motherwhite@yahoo.com</p>
+      <p>Phone/WhatsApp: 0762 391 050</p>
+      <p>Mon–Fri: 7:00 AM – 4:30 PM</p>
+    </div>
+    <div>
+      <p><strong>Quick Links</strong></p>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#governance">Governance</a>
+        <a href="#safeguarding">Safeguarding</a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #243b53; color: #627d98; font-size: 0.85rem;">
+    &copy; 2026 White Mother. All rights reserved.
+  </div>
+</footer>
 
 </body>
 </html>
+      
+    
+
+    
+     
+
+
+    
+
+        
+
+    
+         
+     
